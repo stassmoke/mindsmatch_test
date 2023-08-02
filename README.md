@@ -1,4 +1,4 @@
 # mindsmatch_test
 
 # npm i
-# npm run serve
+# npm run start
