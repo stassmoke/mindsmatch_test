@@ -1,0 +1,128 @@
+
+@import "~normalize.css/normalize.css";
+@import "./styles/variables";
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700|Roboto:100,300,400");
+
+
+// Sorry, no time for deeper customization
+
+body {
+  background: $darkBg;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+.main-content {
+  padding: 20px;
+}
+
+.todo-app__description {
+  background-color: $lightBg;
+  padding: 5px 10px;
+  width: 30vw;
+}
+
+.todo-app__status {
+  background-color: $lightBg;
+  padding: 5px 10px;
+  color: $textColor;
+}
+
+.todo-app {
+    padding: 20px;
+  
+    &__title {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+  
+    &__input {
+      display: flex;
+      margin-bottom: 10px;
+  
+      input[type="text"] {
+        flex: 1;
+        padding: 5px 10px;
+        font-size: 16px;
+      }
+
+      &__main {
+        background-color: $lightBg;
+        border: none;
+        color: $textColor;
+        outline: none;
+      }
+
+      button {
+        padding: 5px 10px;
+        font-size: 16px;
+        background-color: $blueBtn;
+        color: $textColor;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-left: 10px;
+      }
+    }
+  
+    &__list {
+      list-style: none;
+      padding: 0;
+  
+      &__item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+        justify-content: space-between;
+
+        button {
+          padding: 5px 10px;
+          font-size: 16px;
+          background-color: $blueBtn;
+          color: $textColor;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          margin-left: 10px;
+          min-width: 60px;
+        }
+
+        
+
+        &:not(.disabled) {
+            .todo-app__edit {
+                display: none;
+            }
+        }
+
+        &.disabled {
+            .todo-app__save {
+                display: none;
+            }
+        }
+        
+  
+        input[type="checkbox"] {
+          margin-right: 5px;
+        }
+  
+        label {
+          cursor: pointer;
+        }
+      }
+    }
+
+}
+
+.todo-item {
+    border: 1px solid #ccc;
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+

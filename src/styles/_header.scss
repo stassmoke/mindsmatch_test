@@ -1,0 +1,112 @@
+@import "variables";
+@import "global";
+
+
+.logo {
+    width: 10rem;
+    height: 5rem;
+  }
+  
+  .header {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+  
+    &__logo {
+      margin-right: 2rem;
+    }
+
+    .hader__mobile__btn {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        width: 20px;
+        height: 20px;
+        z-index: 2;
+        border-radius: 5px;
+        background-color: $lightGrey;
+        
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        @media (min-width: map-get($container-max-widths, lg)) {
+            display: none;
+            right: 0;
+            top: 0;
+            width: 1px;
+            height: 1px;
+            opacity: 0;
+        }
+    }
+  }
+
+  .header__nav {
+    
+
+    &.active {
+        .nav {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;    
+            background-color: $textColor;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            align-items: center;
+            justify-content: space-around;
+            
+             @media (min-width: map-get($container-max-widths, lg)) { 
+                display: flex;
+             }
+
+             &__link {
+                color: $blueBtn;
+             }
+
+        }
+        
+    }
+  }
+
+  .nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: none;
+
+    @media (min-width: map-get($container-max-widths, lg)) {
+        display: flex;
+        position: relative;
+        width: auto;
+        height: auto;    
+        background-color: transparent;
+        z-index: 1;
+        left: auto;
+        top: auto;
+    }
+
+    
+  
+    &__item {
+      margin-right: 1rem;
+    }
+  
+    &__link {
+      text-decoration: none;
+      color: $textColor;
+      padding: 2rem;
+      border-radius: 5px;
+  
+      &:hover {
+        background-color: $lightBg;
+      }
+    }
+  }
+  
